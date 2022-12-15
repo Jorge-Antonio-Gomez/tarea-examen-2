@@ -126,11 +126,14 @@ De esta ecuación tenemos que:
 
 \subsubsection{Ejemplo en Python}
 
-Considere el siguiente ejemplo: Sean $X_1, X_2, \ldots, X_n$ variables aleatorias independientes con distribución exponencial, tal que $X_i \sim \text{Exp}(\lambda)$. El segundo momento $\text{E}[\overline{X}^2_i]$ de $X_i$, con $m$ diferentes valores de $\omega$, puede ser simulado en Python de la siguiente manera:
+Considere el siguiente ejemplo: Sean $X_1, X_2, \ldots$ variables aleatorias independientes con distribución exponencial, tal que $X_i \sim \text{Exp}(\lambda)$. El segundo momento $\text{E}[\overline{X}^2_i]$ de $X_i$, con $m$ diferentes valores de $\omega$, puede ser simulado en Python de la siguiente manera:
 
 \vspace*{0.3cm}
 
+Importamos las librerías necesarias y definimos los parámetros:
+
 \begin{lstlisting}[language=Python]
+# Librerias
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -138,17 +141,26 @@ import matplotlib.pyplot as plt
 media_exp = 2   # beta = 0.5
 n = 10000       # Numero de variables aleatorias
 m = 50          # Numero de w's
+\end{lstlisting}
 
-# Generamos m muestras de n variables aleatorias con distribucion exponencial:
+Generamos $m$ muestras de $n$ variables aleatorias con distribucion exponencial:
+
+\begin{lstlisting}[language=Python]
 x = np.random.exponential(media_exp, (m,n))
     # (m,n) es una matriz (filas, columnas)
+\end{lstlisting}
 
-# Obtenemos la media de cada una de las muestras:
+Obtenemos la media de cada una de las muestras:
+
+\begin{lstlisting}[language=Python]
 x_barra = np.mean(x, axis=1)
     # axis=1: calcula la media de cada fila
-    # (m, 1) es un vector
+    # (m, 1) es un vector columna
+\end{lstlisting}
 
-# Obtenemos el segundo momento de cada una de las muestras:
+Obtenemos el segundo momento de cada una de las muestras:
+
+\begin{lstlisting}[language=Python]
 x_barra_cuadrado = np.mean(x_barra**2)
 
 print(x_barra_cuadrado)
