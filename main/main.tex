@@ -16,6 +16,7 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{verbatim}
+\usepackage{subfig}
 
 % To define colors
 \definecolor{commentgreen}{RGB}{40, 180, 20}
@@ -184,6 +185,37 @@ print(x_barra_cuadrado)
 
 \section{Teorema límite central}
 
+Sean $X_1, X_2, ..., X_n$ n variables aleatorias IID con una distribucion de probabilidad no específicada y que tienen una media $\mu$ y una varianza $\sigma^2$ finita. El promedio muestral $\overline{X} = (X_1, X_2, ..., X_n)/n$ tiene una distribución con media $\mu$ y varianza $\sigma^2/n$ que tiende hacia una distribución normal conforme $n$ tiende a $\infty$. En otras palabras, la variable aleatoria $(\overline{X}-\mu)/(\sigma/\sqrt{n})$ tiene como limite una distribución normal estándar.\footnote{George C. Canavos, \textit{Probabilidad y estadística: aplicaciones y métodos}, trad. Edmundo Urbina (Ciudad de México: McGraw Hill, 1988), 230.} 
+
+La demostración de este teorema puede ser consultada en las páginas 247-249 del libro de \textit{Probabilidad y estadística: aplicaciones y métodos} de George Canavos.
+
+\subsection{Teorema de Moivre-Laplace}
+
+Sea $X$ una variable aleatoria binomial con media $np$ y desviación estandar $\sqrt{np(1-p)}$. La distribución de la variable aleatoria tiende a la normal estandar conforme el número de ensayos independientes $n \rightarrow \infty$. \footnote{Canavos, \textit{Probabilidad y estadística: aplicaciones y métodos}, 141-142.} En otras palabras, una distribución binomial tenderá a la normal estándar conforme el número de ensayos vaya aumentando.
+
+\
+Para ilustrarlo se graficaran las funciones de masa de probabilidad de que una moneda caiga cara en $n$ experimentos. Donde $n$ tomará valores cada vez más grandes.\
+
+\begin{figure}
+        \subfloat[n=5]{
+            \includegraphics[scale=.4]{n=5.png}}
+        \subfloat[n=10]{
+            \includegraphics[scale=.4]{n=10.png}}\\
+        \subfloat[n=30]{
+            \includegraphics[scale=.4]{n=30.png}}
+        \subfloat[n=50]{
+            \includegraphics[scale=.4]{n=50.png}}\\
+        \subfloat[n=100]{
+            \includegraphics[scale=.4]{n=100.png}}
+        \subfloat[n=500]{
+            \includegraphics[scale=.4]{n=500.png}}
+        \caption{Teorema de Moivre-Laplace}
+        \label{f:animales}
+
+\end{figure}
+
+\
+Como es observado, mientras más aumenta la cantidad de experimentos realizados, más se asemeja la función de masa de probabilidad de la distribución binomial a la función de densidad de probabilidad de la distribución normal.
 
 
 \end{document}
